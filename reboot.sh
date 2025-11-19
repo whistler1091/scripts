@@ -1,3 +1,3 @@
-bash
-sudo crontab -l 2>/dev/null | grep -qxF "#THISISJUSTATEST" \
-  || ( sudo crontab -l 2>/dev/null; echo "#THISISJUSTATEST" ) | sudo crontab -
+( crontab -l 2>/dev/null | grep -qxF "#THISISJUSTATEST" \
+  || printf "%s\n" "$(crontab -l 2>/dev/null)" "#THISISJUSTATEST" ) \
+  | sudo crontab -
